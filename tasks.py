@@ -1,26 +1,14 @@
 TASKS = [
-    "CHEKIN",
+    # "CHEKIN",
     # "WORK2",
-    # "TEST_SWAP"
+    "TEST_SWAP"
 ]
 
 CHEKIN = ["chekin"]
 
 TEST_SWAP = [
-    "zenithswap_liq",
-    # "zenithswap",
-    # "claim_client",
-    # "send_phrs",
-    # "zenithswap",
-    # "orbiter",
-    # "brokex",
-    # "autostaking",
+    "zero_swap",
 
-    # "faroswap",
-    # "faroswap_liq",
-
-    # "primuslabs",
-    # "check_wallet",
 ]
 
 WORK = [

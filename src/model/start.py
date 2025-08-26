@@ -5,6 +5,7 @@ import asyncio
 
 
 from src.model.pharos_xyz.instance import PharosXYZ
+from src.model.zero_exchange.instance import ZeroExchange
 
 
 from src.utils.config import Config
@@ -114,15 +115,15 @@ class Start:
         if task == "chekin":
             await pharos.chekin()
 
-        # elif task == "zenith":
-        #     zenith = Zenithfinance(
-        #         self.account_index,
-        #         self.proxy,
-        #         self.account_data,
-        #         self.config,
-        #         self.session,
-        #     )
-        #     await zenith.swap()
+        elif task == "zero_swap":
+            zero_swap = ZeroExchange(
+                self.account_index,
+                self.proxy,
+                self.account_data,
+                self.config,
+                self.session,
+            )
+            await zero_swap.swap()
 
 
 
