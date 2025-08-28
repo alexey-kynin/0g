@@ -2,6 +2,7 @@ RETRIES = 1  # Сколько раз повторять 'зафейленное'
 PAUSE_BETWEEN_RETRIES = 10  # Пауза между повторами
 
 RPC_GALILEO = "https://evmrpc-testnet.0g.ai"
+EXPLORER_URL_0G = "https://chainscan-galileo.0g.ai/tx/0x"
 
 TOKENS = {
     "USDT": {"address": "0x3eC8A8705bE1D5ca90066b37ba62c4183B024ebf", "decimals": 18},

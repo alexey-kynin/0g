@@ -68,7 +68,7 @@ class WalletDatabase:
             cur = conn.cursor()
             cur.execute("SELECT name, wallet_address, "
                         "encrypted_private_key, inviteCode "
-                        "FROM users WHERE status = 0")
+                        "FROM users WHERE status = 11")
             rows = cur.fetchall()
 
         if not rows:

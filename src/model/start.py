@@ -3,10 +3,7 @@ import primp
 import random
 import asyncio
 
-
-from src.model.pharos_xyz.instance import PharosXYZ
 from src.model.zero_exchange.instance import ZeroExchange
-
 
 from src.utils.config import Config
 from src.utils.client import create_client
@@ -45,19 +42,6 @@ class Start:
 
     async def flow(self):
         try:
-            pharos = PharosXYZ(
-                self.account_index,
-                self.proxy,
-                self.account_data,
-                # self.discord_token,
-                self.config,
-                self.session,
-            )
-
-
-            # if "farm_faucet" in self.config.FLOW.TASKS:
-            #     await plume.faucet()
-            #     return True
 
             # Заранее определяем все задачи
             planned_tasks = []
@@ -95,7 +79,7 @@ class Start:
             # Выполняем задачи по плану
             for i, task, task_type in planned_tasks:
                 logger.info(f"[{self.name}:{self.account_index}] Executing task {i}: {task}")
-                await self.execute_task(task, pharos)
+                await self.execute_task(task)
                 await self.sleep(task)
 
             return True
@@ -108,14 +92,11 @@ class Start:
 
 
 
-    async def execute_task(self, task, pharos):
+    async def execute_task(self, task):
         """Execute a single task"""
         task = task.lower()
 
-        if task == "chekin":
-            await pharos.chekin()
-
-        elif task == "zero_swap":
+        if task == "zero_swap":
             zero_swap = ZeroExchange(
                 self.account_index,
                 self.proxy,
